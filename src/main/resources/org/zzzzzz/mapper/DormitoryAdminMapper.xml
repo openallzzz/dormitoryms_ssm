@@ -5,4 +5,13 @@
     <select id="list" resultType="DormitoryAdmin">
         select * from dormitory_admin
     </select>
+    <select id="searchByUsername" resultType="DormitoryAdmin">
+        select * from dormitory_admin where username like concat('%', #{username}, '%')
+    </select>
+    <select id="searchByName" resultType="DormitoryAdmin">
+        select * from dormitory_admin where name like concat('%', #{name}, '%')
+    </select>
+    <select id="searchByTelephone" resultType="DormitoryAdmin">
+        select * from dormitory_admin where telephone like concat('%', #{telephone}, '%')
+    </select>
 </mapper>
