@@ -19,4 +19,18 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> list() {
         return this.studentMapper.list();
     }
+
+    public List<Student> search(String key, String value) {
+        if(value.equals("")) return studentMapper.list();
+        List<Student> list = null;
+        switch (key) {
+            case "number" :
+                list = this.studentMapper.searchByNumber(value);
+                break;
+            case "name" :
+                list = this.studentMapper.searchByName(value);
+                break;
+        }
+        return list;
+    }
 }
