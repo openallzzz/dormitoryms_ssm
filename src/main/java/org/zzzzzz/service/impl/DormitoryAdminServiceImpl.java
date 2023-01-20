@@ -58,4 +58,13 @@ public class DormitoryAdminServiceImpl implements DormitoryAdminService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void update(DormitoryAdmin dormitoryAdmin) {
+        try {
+            this.dormitoryAdminMapper.update(dormitoryAdmin);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

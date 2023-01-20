@@ -43,4 +43,9 @@ public class DormitoryAdminController {
         this.dormitoryAdminService.delete(id);
         return "redirect:/dormitoryAdmin/list";
     }
+    @PostMapping("/update")
+    public String update(DormitoryAdmin dormitoryAdmin) {
+        this.dormitoryAdminService.update(dormitoryAdmin);
+        return "redirect:/dormitoryAdmin/list";
+    }
 }
