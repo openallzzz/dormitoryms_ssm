@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.zzzzzz.entity.DormitoryAdmin;
 import org.zzzzzz.service.DormitoryAdminService;
 
 @Controller
@@ -23,7 +24,7 @@ public class DormitoryAdminController {
         return modelAndView;
     }
 
-    @PostMapping("search")
+    @PostMapping("/search")
     public ModelAndView search(String key, String value) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("adminmanager");
@@ -31,4 +32,9 @@ public class DormitoryAdminController {
         return modelAndView;
     }
 
+    @PostMapping("/save")
+    public String save(DormitoryAdmin dormitoryAdmin) {
+        this.dormitoryAdminService.save(dormitoryAdmin);
+        return "redirect:/dormitoryAdmin/list";
+    }
 }

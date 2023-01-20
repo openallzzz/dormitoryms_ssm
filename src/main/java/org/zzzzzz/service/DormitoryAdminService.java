@@ -12,4 +12,6 @@ public interface DormitoryAdminService {
 
     public List<DormitoryAdmin> search(String key, String value);
 
+    public void save(DormitoryAdmin dormitoryAdmin);
+
 }

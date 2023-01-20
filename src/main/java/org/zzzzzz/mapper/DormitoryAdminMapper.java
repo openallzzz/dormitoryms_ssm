@@ -12,4 +12,6 @@ public interface DormitoryAdminMapper {
     public List<DormitoryAdmin> searchByName(String name);
     public List<DormitoryAdmin> searchByTelephone(String telephone);
 
+    public void save(DormitoryAdmin dormitoryAdmin);
+
 }

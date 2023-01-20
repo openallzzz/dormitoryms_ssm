@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.zzzzzz.mapper.DormitoryAdminMapper">
+    <insert id="save">
+        insert into dormitory_admin values(null, #{username},
+                    #{password}, #{name}, #{gender}, #{telephone})
+    </insert>
 
     <select id="list" resultType="DormitoryAdmin">
         select * from dormitory_admin

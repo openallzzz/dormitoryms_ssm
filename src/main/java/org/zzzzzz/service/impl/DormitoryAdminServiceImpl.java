@@ -2,6 +2,7 @@ package org.zzzzzz.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.zzzzzz.entity.DormitoryAdmin;
 import org.zzzzzz.mapper.DormitoryAdminMapper;
 import org.zzzzzz.service.DormitoryAdminService;
@@ -38,5 +39,14 @@ public class DormitoryAdminServiceImpl implements DormitoryAdminService {
         }
 
         return list;
+    }
+
+    @Override
+    public void save(DormitoryAdmin dormitoryAdmin) {
+        try {
+            this.dormitoryAdminMapper.save(dormitoryAdmin);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
