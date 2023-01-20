@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.zzzzzz.mapper.StudentMapper">
 
-    <select id="list" resultType="arraylist">
+    <select id="list" resultType="student">
         select s.id,s.number,s.name name,s.gender,s.dormitory_id dormitoryId,d.name
             dormitoryName,s.state,s.create_date createDate
         from student s,dormitory d where s.dormitory_id = d.id
