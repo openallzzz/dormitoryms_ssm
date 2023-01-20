@@ -49,4 +49,13 @@ public class DormitoryAdminServiceImpl implements DormitoryAdminService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void delete(Integer id) {
+        try {
+            this.dormitoryAdminMapper.delete(id);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

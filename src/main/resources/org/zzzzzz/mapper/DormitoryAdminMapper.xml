@@ -5,6 +5,9 @@
         insert into dormitory_admin values(null, #{username},
                     #{password}, #{name}, #{gender}, #{telephone})
     </insert>
+    <delete id="delete">
+        delete from dormitory_admin where id = #{id}
+    </delete>
 
     <select id="list" resultType="DormitoryAdmin">
         select * from dormitory_admin

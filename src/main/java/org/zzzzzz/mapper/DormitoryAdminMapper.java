@@ -14,4 +14,6 @@ public interface DormitoryAdminMapper {
 
     public void save(DormitoryAdmin dormitoryAdmin);
 
+    public void delete(Integer id);
+
 }
