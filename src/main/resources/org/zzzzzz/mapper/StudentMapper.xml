@@ -2,6 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.zzzzzz.mapper.StudentMapper">
 
+    <insert id="save">
+        insert into student(number, name, gender, dormitory_id, state, create_date)
+            values(#{number}, #{name}, #{gender}, #{dormitoryId}, '入住', #{createDate})
+    </insert>
+
     <select id="list" resultType="student">
         select s.id,s.number,s.name name,s.gender,s.dormitory_id dormitoryId,d.name
             dormitoryName,s.state,s.create_date createDate

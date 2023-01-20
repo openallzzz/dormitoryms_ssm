@@ -10,4 +10,6 @@ public interface StudentMapper {
     public List<Student> searchByNumber(String number);
 
     public List<Student> searchByName(String name);
+
+    public void save(Student student);
 }
