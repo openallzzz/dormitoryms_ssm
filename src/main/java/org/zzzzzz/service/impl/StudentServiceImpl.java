@@ -52,4 +52,17 @@ public class StudentServiceImpl implements StudentService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void update(Student student) {
+        try {
+            this.studentMapper.update(student);
+            if(!student.getDormitoryId().equals(student.getOldDormitoryId())) {
+                this.dormitoryMapper.subAvailable(student.getDormitoryId());
+                this.dormitoryMapper.addAvailable(student.getOldDormitoryId());
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

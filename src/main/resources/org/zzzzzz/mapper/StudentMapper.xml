@@ -7,6 +7,11 @@
             values(#{number}, #{name}, #{gender}, #{dormitoryId}, '入住', #{createDate})
     </insert>
 
+    <update id="update">
+        update student set number = #{number}, name = #{name}, gender = #{gender},
+                           dormitory_id = #{dormitoryId} where id = #{id}
+    </update>
+
     <select id="list" resultType="student">
         select s.id,s.number,s.name name,s.gender,s.dormitory_id dormitoryId,d.name
             dormitoryName,s.state,s.create_date createDate

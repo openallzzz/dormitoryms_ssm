@@ -9,4 +9,5 @@ public interface DormitoryMapper {
     public List<Dormitory> availableList();
 
     public void subAvailable(Integer id);
+    public void addAvailable(Integer id);
 }

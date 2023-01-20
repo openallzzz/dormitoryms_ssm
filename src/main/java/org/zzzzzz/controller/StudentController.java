@@ -46,4 +46,10 @@ public class StudentController {
         return "redirect:/student/list";
     }
 
+    @PostMapping("/update")
+    public String update(Student student) {
+        this.studentService.update(student);
+        return "redirect:/student/list";
+    }
+
 }

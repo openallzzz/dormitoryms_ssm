@@ -12,4 +12,6 @@ public interface StudentMapper {
     public List<Student> searchByName(String name);
 
     public void save(Student student);
+
+    public void update(Student student);
 }
