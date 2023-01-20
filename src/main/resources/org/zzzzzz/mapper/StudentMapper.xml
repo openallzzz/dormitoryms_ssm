@@ -12,6 +12,10 @@
                            dormitory_id = #{dormitoryId} where id = #{id}
     </update>
 
+    <delete id="delete">
+        delete from student where id = #{id}
+    </delete>
+
     <select id="list" resultType="student">
         select s.id,s.number,s.name name,s.gender,s.dormitory_id dormitoryId,d.name
             dormitoryName,s.state,s.create_date createDate

@@ -65,4 +65,14 @@ public class StudentServiceImpl implements StudentService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void delete(Student student) {
+        try {
+            this.studentMapper.delete(student);
+            this.dormitoryMapper.addAvailable(student.getDormitoryId());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

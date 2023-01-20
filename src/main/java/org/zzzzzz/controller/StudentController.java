@@ -52,4 +52,11 @@ public class StudentController {
         return "redirect:/student/list";
     }
 
+
+    @PostMapping("/delete")
+    public String delete(Student student) {
+        this.studentService.delete(student);
+        return "redirect:/student/list";
+    }
+
 }
