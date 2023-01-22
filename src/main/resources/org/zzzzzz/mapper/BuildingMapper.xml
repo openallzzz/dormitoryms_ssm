@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zzzzzz.mapper.BuildingMapper">
+
+    <select id="list" resultType="org.zzzzzz.entity.Building">
+        select b.id id, b.name name, b.introduction, d.name adminName, d.id adminId
+            from building b, dormitory_admin d where b.admin_id = d.id
+    </select>
+</mapper>
