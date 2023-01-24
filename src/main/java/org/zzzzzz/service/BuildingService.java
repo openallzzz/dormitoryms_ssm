@@ -14,4 +14,6 @@ public interface BuildingService {
     public void save(Building building);
 
     public void update(Building building);
+
+    public void delete(Integer id);
 }

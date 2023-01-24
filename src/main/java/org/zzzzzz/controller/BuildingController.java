@@ -51,4 +51,10 @@ public class BuildingController {
         return "redirect:/building/list";
     }
 
+    @PostMapping("/delete")
+    public String delete(Integer id) {
+        this.buildingService.delete(id);
+        return "redirect:/building/list";
+    }
+
 }

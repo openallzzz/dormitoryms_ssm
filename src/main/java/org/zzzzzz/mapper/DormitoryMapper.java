@@ -10,4 +10,12 @@ public interface DormitoryMapper {
 
     public void subAvailable(Integer id);
     public void addAvailable(Integer id);
+
+    public List<Integer> findDormitoryIdByBuildingId(Integer buildingId);
+
+    public Integer findAvailableDormitoryId();
+
+    public void delete(Integer id);
+
+    public void setAvailableToZero(Integer id);
 }

@@ -9,7 +9,25 @@
         update dormitory set available = available - 1 where id = #{id}
     </update>
 
+    <update id="setAvailableToZero">
+        update dormitory set available = 0 where id = #{id}
+    </update>
+
+    <delete id="delete">
+        delete from dormitory where id = #{id}
+    </delete>
+
     <select id="availableList" resultType="org.zzzzzz.entity.Dormitory">
         select id, name from dormitory where available > 0
+    </select>
+
+    <select id="findDormitoryIdByBuildingId" resultType="integer">
+        select id from dormitory where building_id = #{buildingId}
+    </select>
+
+    <select id="findAvailableDormitoryId" resultType="java.lang.Integer">
+        select id from dormitory
+        where available > 0
+        limit 0, 1
     </select>
 </mapper>
