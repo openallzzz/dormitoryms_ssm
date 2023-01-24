@@ -11,5 +11,6 @@ public interface  BuildingMapper {
     public List<Building> searchByIntrodution(String introduction);
 
     public void save(Building building);
+    public void update(Building building);
 
 }

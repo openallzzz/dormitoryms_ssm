@@ -36,6 +36,19 @@ public class BuildingServiceImpl implements BuildingService {
 
     @Override
     public void save(Building building) {
-        this.buildingMapper.save(building);
+        try {
+            this.buildingMapper.save(building);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void update(Building building) {
+        try {
+            this.buildingMapper.update(building);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

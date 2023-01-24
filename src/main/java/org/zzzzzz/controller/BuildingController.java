@@ -45,4 +45,10 @@ public class BuildingController {
         return "redirect:/building/list";
     }
 
+    @PostMapping("/update")
+    public String update(Building building) {
+        this.buildingService.update(building);
+        return "redirect:/building/list";
+    }
+
 }
