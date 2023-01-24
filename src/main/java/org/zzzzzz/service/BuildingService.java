@@ -10,4 +10,6 @@ public interface BuildingService {
     public List<Building> list();
 
     public List<Building> search(String key, String value);
+
+    public void save(Building building);
 }

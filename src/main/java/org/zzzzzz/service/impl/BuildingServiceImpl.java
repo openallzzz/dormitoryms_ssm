@@ -33,4 +33,9 @@ public class BuildingServiceImpl implements BuildingService {
         }
         return list;
     }
+
+    @Override
+    public void save(Building building) {
+        this.buildingMapper.save(building);
+    }
 }
