@@ -6,4 +6,16 @@
         select b.id id, b.name name, b.introduction, d.name adminName, d.id adminId
             from building b, dormitory_admin d where b.admin_id = d.id
     </select>
+
+    <select id="searchByName" resultType="org.zzzzzz.entity.Building">
+        select b.id id, b.name name, b.introduction, d.name adminName, d.id adminId
+        from building b, dormitory_admin d where b.admin_id = d.id and b.name
+        like concat('%', #{name}, '%')
+    </select>
+
+    <select id="searchByIntrodution" resultType="org.zzzzzz.entity.Building">
+        select b.id id, b.name name, b.introduction, d.name adminName, d.id adminId
+        from building b, dormitory_admin d where b.admin_id = d.id and b.introduction
+        like concat('%', #{introduction}, '%')
+    </select>
 </mapper>

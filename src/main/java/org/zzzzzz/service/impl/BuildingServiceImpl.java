@@ -18,4 +18,19 @@ public class BuildingServiceImpl implements BuildingService {
     public List<Building> list() {
         return buildingMapper.list();
     }
+
+    @Override
+    public List<Building> search(String key, String value) {
+        List<Building> list = null;
+        if(value.equals("")) list = buildingMapper.list();
+        switch (key) {
+            case "name" :
+                list = buildingMapper.searchByName(value);
+                break;
+            case "introduction" :
+                list = buildingMapper.searchByIntrodution(value);
+                break;
+        }
+        return list;
+    }
 }

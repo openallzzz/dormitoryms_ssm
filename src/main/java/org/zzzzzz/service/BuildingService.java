@@ -8,4 +8,6 @@ import java.util.List;
 @Service
 public interface BuildingService {
     public List<Building> list();
+
+    public List<Building> search(String key, String value);
 }
