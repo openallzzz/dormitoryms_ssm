@@ -30,4 +30,9 @@
         where available > 0
         limit 0, 1
     </select>
+
+    <select id="list" resultType="org.zzzzzz.entity.Dormitory">
+        select d.id, b.name buildingName, d.name name, d.type, d.available, d.telephone
+        from dormitory d, building b where d.building_id = b.id
+    </select>
 </mapper>

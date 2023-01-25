@@ -8,4 +8,5 @@ import java.util.List;
 @Service
 public interface DormitoryService {
     public List<Dormitory> availableList();
+    public List<Dormitory> list();
 }

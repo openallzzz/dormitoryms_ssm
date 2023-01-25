@@ -18,4 +18,6 @@ public interface DormitoryMapper {
     public void delete(Integer id);
 
     public void setAvailableToZero(Integer id);
+
+    public List<Dormitory> list();
 }

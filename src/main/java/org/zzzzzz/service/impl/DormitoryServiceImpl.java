@@ -18,4 +18,9 @@ public class DormitoryServiceImpl implements DormitoryService {
     public List<Dormitory> availableList() {
         return this.dormitoryMapper.availableList();
     }
+
+    @Override
+    public List<Dormitory> list() {
+        return this.dormitoryMapper.list();
+    }
 }
