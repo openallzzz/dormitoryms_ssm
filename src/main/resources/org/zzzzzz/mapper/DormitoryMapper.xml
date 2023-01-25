@@ -13,6 +13,11 @@
         update dormitory set available = 0 where id = #{id}
     </update>
 
+    <insert id="save">
+        insert into dormitory(building_id, name, type, available, telephone)
+        values(#{buildingId}, #{name}, #{type}, #{type}, #{telephone})
+    </insert>
+
     <delete id="delete">
         delete from dormitory where id = #{id}
     </delete>

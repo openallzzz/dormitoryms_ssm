@@ -41,4 +41,13 @@ public class DormitoryServiceImpl implements DormitoryService {
         }
         return list;
     }
+
+    @Override
+    public void save(Dormitory dormitory) {
+        try {
+            this.dormitoryMapper.save(dormitory);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

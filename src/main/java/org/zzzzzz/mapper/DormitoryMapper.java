@@ -21,5 +21,8 @@ public interface DormitoryMapper {
     public List<Dormitory> list();
 
     public List<Dormitory> searchByName(String name);
+
     public List<Dormitory> searchByTelephone(String telephone);
+
+    public void save(Dormitory dormitory);
 }

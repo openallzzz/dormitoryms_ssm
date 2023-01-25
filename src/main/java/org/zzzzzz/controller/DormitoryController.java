@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.zzzzzz.entity.Dormitory;
 import org.zzzzzz.service.BuildingService;
 import org.zzzzzz.service.DormitoryService;
 
@@ -36,5 +37,13 @@ public class DormitoryController {
         modelAndView.addObject("buildingList", this.buildingService.list());
         return modelAndView;
     }
+
+    @PostMapping("/save")
+    public String save(Dormitory dormitory) {
+        this.dormitoryService.save(dormitory);
+        return "redirect:/dormitory/list";
+    }
+
+
 
 }
