@@ -9,4 +9,6 @@ import java.util.List;
 public interface DormitoryService {
     public List<Dormitory> availableList();
     public List<Dormitory> list();
+
+    public List<Dormitory> search(String key, String value);
 }

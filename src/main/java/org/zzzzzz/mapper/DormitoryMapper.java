@@ -1,6 +1,5 @@
 package org.zzzzzz.mapper;
 
-import org.apache.ibatis.type.IntegerTypeHandler;
 import org.zzzzzz.entity.Dormitory;
 
 import java.util.List;
@@ -20,4 +19,7 @@ public interface DormitoryMapper {
     public void setAvailableToZero(Integer id);
 
     public List<Dormitory> list();
+
+    public List<Dormitory> searchByName(String name);
+    public List<Dormitory> searchByTelephone(String telephone);
 }

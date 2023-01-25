@@ -35,4 +35,16 @@
         select d.id, b.name buildingName, d.name name, d.type, d.available, d.telephone
         from dormitory d, building b where d.building_id = b.id
     </select>
+
+    <select id="searchByName" resultType="org.zzzzzz.entity.Dormitory">
+        select d.id, b.name buildingName, d.name name, d.type, d.available, d.telephone
+        from dormitory d, building b
+        where d.building_id = b.id and d.name like concat('%',#{name},'%')
+    </select>
+
+    <select id="searchByTelephone" resultType="org.zzzzzz.entity.Dormitory">
+        select d.id, b.name buildingName, d.name name, d.type, d.available, d.telephone
+        from dormitory d, building b
+        where d.building_id = b.id and d.telephone like concat('%',#{telephone},'%')
+    </select>
 </mapper>

@@ -23,4 +23,22 @@ public class DormitoryServiceImpl implements DormitoryService {
     public List<Dormitory> list() {
         return this.dormitoryMapper.list();
     }
+
+    @Override
+    public List<Dormitory> search(String key, String value) {
+        List<Dormitory> list = null;
+        if(value.equals("")) {
+            list = this.dormitoryMapper.list();
+        } else {
+            switch (key) {
+                case "name" :
+                    list = this.dormitoryMapper.searchByName(value);
+                    break;
+                case "telephone" :
+                    list = this.dormitoryMapper.searchByTelephone(value);
+                    break;
+            }
+        }
+        return list;
+    }
 }
