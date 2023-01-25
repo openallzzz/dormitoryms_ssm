@@ -50,4 +50,10 @@ public class DormitoryController {
         return "redirect:/dormitory/list";
     }
 
+    @PostMapping("/delete")
+    public String delete(Integer id) {
+        this.dormitoryService.delete(id);
+        return "redirect:/dormitory/list";
+    }
+
 }

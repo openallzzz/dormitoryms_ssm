@@ -15,4 +15,6 @@ public interface DormitoryService {
     public void save(Dormitory dormitory);
 
     public void update(Dormitory dormitory);
+
+    public void delete(Integer id);
 }
