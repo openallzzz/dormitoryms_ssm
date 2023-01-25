@@ -13,6 +13,10 @@
         update dormitory set available = 0 where id = #{id}
     </update>
 
+    <update id="update">
+        update dormitory set name = #{name}, telephone = #{telephone} where id = #{id}
+    </update>
+
     <insert id="save">
         insert into dormitory(building_id, name, type, available, telephone)
         values(#{buildingId}, #{name}, #{type}, #{type}, #{telephone})

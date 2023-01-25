@@ -44,6 +44,10 @@ public class DormitoryController {
         return "redirect:/dormitory/list";
     }
 
-
+    @PostMapping("/update")
+    public String update(Dormitory dormitory) {
+        this.dormitoryService.update(dormitory);
+        return "redirect:/dormitory/list";
+    }
 
 }

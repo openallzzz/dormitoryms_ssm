@@ -13,4 +13,6 @@ public interface DormitoryService {
     public List<Dormitory> search(String key, String value);
 
     public void save(Dormitory dormitory);
+
+    public void update(Dormitory dormitory);
 }

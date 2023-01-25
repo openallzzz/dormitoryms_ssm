@@ -50,4 +50,13 @@ public class DormitoryServiceImpl implements DormitoryService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void update(Dormitory dormitory) {
+        try {
+            this.dormitoryMapper.update(dormitory);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
