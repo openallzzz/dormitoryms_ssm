@@ -75,4 +75,9 @@ public class StudentServiceImpl implements StudentService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public List<Student> moveoutList() {
+        return this.studentMapper.moveoutList();
+    }
 }

@@ -16,4 +16,6 @@ public interface StudentService {
     public void update(Student student);
 
     public void delete(Student student);
+
+    public List<Student> moveoutList();
 }
