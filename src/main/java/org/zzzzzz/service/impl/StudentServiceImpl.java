@@ -80,4 +80,19 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> moveoutList() {
         return this.studentMapper.moveoutList();
     }
+
+    @Override
+    public List<Student> searchForMoveoutList(String key, String value) {
+        if(value.equals("")) return this.studentMapper.list();
+        List<Student> list = null;
+        switch (key) {
+            case "number" :
+                list = studentMapper.searchForMoveoutByNumber(value);
+                break;
+            case "name" :
+                list = studentMapper.searchForMoveoutByName(value);
+                break;
+        }
+        return list;
+    }
 }

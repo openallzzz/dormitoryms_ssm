@@ -18,4 +18,6 @@ public interface StudentService {
     public void delete(Student student);
 
     public List<Student> moveoutList();
+
+    public List<Student> searchForMoveoutList(String key, String value);
 }

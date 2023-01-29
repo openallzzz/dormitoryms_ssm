@@ -24,4 +24,7 @@ public interface StudentMapper {
     public void resetDormitoryId(@Param("id") Integer studentId, @Param("dormitory_id") Integer dormitoryId);
 
     public List<Student> moveoutList();
+
+    public List<Student> searchForMoveoutByName(String name);
+    public List<Student> searchForMoveoutByNumber(String number);
 }

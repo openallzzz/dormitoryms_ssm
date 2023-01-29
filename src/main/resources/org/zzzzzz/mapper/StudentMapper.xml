@@ -48,4 +48,17 @@
         select id from student where dormitory_id = #{dormitoryId}
     </select>
 
+    <select id="searchForMoveoutByName" resultType="org.zzzzzz.entity.Student">
+        select s.id,s.number,s.name name,s.gender,s.dormitory_id dormitoryId,d.name dormitoryName,s.state
+        from student s,dormitory d
+        where s.dormitory_id = d.id and s.state = '入住' and s.name like concat('%',#{name},'%')
+    </select>
+
+    <select id="searchForMoveoutByNumber" resultType="org.zzzzzz.entity.Student">
+        select s.id,s.number,s.name name,s.gender,s.dormitory_id dormitoryId,d.name dormitoryName,s.state
+        from student s,dormitory d
+        where s.dormitory_id = d.id and s.state = '入住' and s.number like concat('%',#{number},'%')
+    </select>
+
+
 </mapper>
