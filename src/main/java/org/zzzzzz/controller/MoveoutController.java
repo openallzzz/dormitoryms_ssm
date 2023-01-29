@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.zzzzzz.entity.Moveout;
 import org.zzzzzz.service.StudentService;
 
 @Controller
@@ -29,6 +30,12 @@ public class MoveoutController {
         modelAndView.setViewName("moveoutregister");
         modelAndView.addObject("list", this.studentService.searchForMoveoutList(key, value));
         return modelAndView;
+    }
+
+    @PostMapping("/register")
+    public String register(Moveout moveout) {
+        this.studentService.moveout(moveout);
+        return "redirect:/moveout/list";
     }
 
 }

@@ -2,6 +2,7 @@ package org.zzzzzz.mapper;
 
 import lombok.experimental.PackagePrivate;
 import org.apache.ibatis.annotations.Param;
+import org.zzzzzz.entity.Moveout;
 import org.zzzzzz.entity.Student;
 
 import java.util.List;
@@ -27,4 +28,8 @@ public interface StudentMapper {
 
     public List<Student> searchForMoveoutByName(String name);
     public List<Student> searchForMoveoutByNumber(String number);
+
+    public void updateStateById(Integer id);
+
+    public void moveout(Moveout moveout);
 }

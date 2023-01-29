@@ -2,6 +2,7 @@ package org.zzzzzz.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.zzzzzz.entity.Moveout;
 import org.zzzzzz.entity.Student;
 import org.zzzzzz.mapper.DormitoryMapper;
 import org.zzzzzz.mapper.StudentMapper;
@@ -94,5 +95,19 @@ public class StudentServiceImpl implements StudentService {
                 break;
         }
         return list;
+    }
+
+    @Override
+    public void moveout(Moveout moveout) {
+        try {
+            this.dormitoryMapper.addAvailable(moveout.getDormitoryId());
+            this.studentMapper.updateStateById(moveout.getStudentId());
+            Date date = new Date();
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            moveout.setCreateDate(format.format(date));
+            this.studentMapper.moveout(moveout);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

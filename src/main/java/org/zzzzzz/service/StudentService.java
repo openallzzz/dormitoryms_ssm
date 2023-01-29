@@ -1,6 +1,7 @@
 package org.zzzzzz.service;
 
 import org.springframework.stereotype.Service;
+import org.zzzzzz.entity.Moveout;
 import org.zzzzzz.entity.Student;
 
 import java.util.List;
@@ -20,4 +21,6 @@ public interface StudentService {
     public List<Student> moveoutList();
 
     public List<Student> searchForMoveoutList(String key, String value);
+
+    public void moveout(Moveout moveout);
 }

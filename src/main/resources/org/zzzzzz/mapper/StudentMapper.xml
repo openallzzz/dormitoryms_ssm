@@ -7,6 +7,11 @@
             values(#{number}, #{name}, #{gender}, #{dormitoryId}, '入住', #{createDate})
     </insert>
 
+    <insert id="moveout">
+        insert into moveout(student_id,dormitory_id,reason,create_date)
+        values(#{studentId},#{dormitoryId},#{reason},#{createDate})
+    </insert>
+
     <update id="update">
         update student set number = #{number}, name = #{name}, gender = #{gender},
                         dormitory_id = #{dormitoryId} where id = #{id}
@@ -14,6 +19,10 @@
 
     <update id="resetDormitoryId">
         update student set dormitory_id = #{dormitory_id} where id = #{id}
+    </update>
+
+    <update id="updateStateById">
+        update student set state = '迁出' where id = #{id}
     </update>
 
     <select id="moveoutList" resultType="student">
