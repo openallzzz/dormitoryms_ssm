@@ -27,4 +27,6 @@ public interface DormitoryMapper {
     public void save(Dormitory dormitory);
 
     public void update(Dormitory dormitory);
+
+    public List<Dormitory> findByBuildingId(Integer buildingId);
 }

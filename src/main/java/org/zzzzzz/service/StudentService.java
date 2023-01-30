@@ -23,4 +23,6 @@ public interface StudentService {
     public List<Student> searchForMoveoutList(String key, String value);
 
     public void moveout(Moveout moveout);
+
+    public List<Student> findByDormitory(Integer dormitoryId);
 }

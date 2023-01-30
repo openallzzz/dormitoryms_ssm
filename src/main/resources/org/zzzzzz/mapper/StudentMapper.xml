@@ -69,5 +69,9 @@
         where s.dormitory_id = d.id and s.state = '入住' and s.number like concat('%',#{number},'%')
     </select>
 
+    <select id="findByDormitoryId" resultType="org.zzzzzz.entity.Student">
+        select id, name from student where dormitory_id = #{dormitoryId}
+    </select>
+
 
 </mapper>

@@ -110,4 +110,9 @@ public class StudentServiceImpl implements StudentService {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public List<Student> findByDormitory(Integer dormitoryId) {
+        return studentMapper.findByDormitoryId(dormitoryId);
+    }
 }

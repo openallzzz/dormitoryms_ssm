@@ -56,4 +56,8 @@
         from dormitory d, building b
         where d.building_id = b.id and d.telephone like concat('%',#{telephone},'%')
     </select>
+
+    <select id="findByBuildingId" resultType="org.zzzzzz.entity.Dormitory">
+        select id, name from dormitory where building_id = #{buildingId}
+    </select>
 </mapper>

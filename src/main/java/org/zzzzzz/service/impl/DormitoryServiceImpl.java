@@ -81,4 +81,9 @@ public class DormitoryServiceImpl implements DormitoryService {
         //  根据宿舍编号删除宿舍
         this.dormitoryMapper.delete(dormitoryId);
     }
+
+    @Override
+    public List<Dormitory> findByBuildingId(Integer buildingId) {
+        return this.dormitoryMapper.findByBuildingId(buildingId);
+    }
 }

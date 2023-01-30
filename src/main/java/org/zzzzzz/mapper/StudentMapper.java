@@ -32,4 +32,6 @@ public interface StudentMapper {
     public void updateStateById(Integer id);
 
     public void moveout(Moveout moveout);
+
+    public List<Student> findByDormitoryId(Integer dormitoryId);
 }

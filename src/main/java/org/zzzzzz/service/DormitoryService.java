@@ -17,4 +17,6 @@ public interface DormitoryService {
     public void update(Dormitory dormitory);
 
     public void delete(Integer id);
+
+    public List<Dormitory> findByBuildingId(Integer buildingId);
 }
