@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zzzzzz.mapper.MoveoutMapper">
+
+    <select id="list" resultType="Moveout">
+        select m.id,s.name studentName,d.name dormitoryName,m.reason,m.create_date createDate
+        from moveout m,student s,dormitory d
+        where m.student_id = s.id and m.dormitory_id = d.id
+    </select>
+
+    <select id="searchByStudentName" resultType="Moveout">
+        select m.id,s.name studentName,d.name dormitoryName,m.reason,m.create_date createDate
+        from moveout m,student s,dormitory d
+        where m.student_id = s.id and m.dormitory_id = d.id and s.name like concat('%',#{value},'%')
+    </select>
+
+    <select id="searchByDormitoryName" resultType="Moveout">
+        select m.id,s.name studentName,d.name dormitoryName,m.reason,m.create_date createDate
+        from moveout m,student s,dormitory d
+        where m.student_id = s.id and m.dormitory_id = d.id and d.name like concat('%',#{value},'%')
+    </select>
+
+</mapper>
