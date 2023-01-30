@@ -6,14 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.zzzzzz.entity.Building;
-import org.zzzzzz.entity.Dormitory;
-import org.zzzzzz.entity.Student;
+import org.zzzzzz.entity.*;
 import org.zzzzzz.service.AbsentService;
 import org.zzzzzz.service.BuildingService;
 import org.zzzzzz.service.DormitoryService;
 import org.zzzzzz.service.StudentService;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -59,6 +58,14 @@ public class AbsentController {
         List<Student> studentList = this.studentService.findByDormitory(dormitoryList.get(0).getId());
         modelAndView.addObject("studentList", studentList);
         return modelAndView;
+    }
+
+    @PostMapping("/save")
+    public String save(Absent absent, HttpSession session) {
+        DormitoryAdmin dormitoryAdmin = (DormitoryAdmin) session.getAttribute("dormitoryAdmin");
+        absent.setDormitoryAdminId(dormitoryAdmin.getId());
+        this.absentService.save(absent);
+        return "redirect:/absent/init";
     }
 
 }

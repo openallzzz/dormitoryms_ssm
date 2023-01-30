@@ -5,12 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.zzzzzz.entity.Student;
 import org.zzzzzz.service.DormitoryService;
 import org.zzzzzz.service.StudentService;
 
 import javax.jws.WebParam;
+import java.util.List;
 
 @Controller
 @RequestMapping("/student")
@@ -57,6 +59,12 @@ public class StudentController {
     public String delete(Student student) {
         this.studentService.delete(student);
         return "redirect:/student/list";
+    }
+
+    @PostMapping("/findByDormitoryId")
+    @ResponseBody // JSON格式的数据
+    public List<Student> findByDormitoryId(Integer dormitoryId) {
+        return studentService.findByDormitory(dormitoryId);
     }
 
 }

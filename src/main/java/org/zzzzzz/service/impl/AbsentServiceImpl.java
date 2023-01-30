@@ -3,9 +3,11 @@ package org.zzzzzz.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.zzzzzz.entity.Absent;
+import org.zzzzzz.entity.DormitoryAdmin;
 import org.zzzzzz.mapper.AbsentMapper;
 import org.zzzzzz.service.AbsentService;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Service
@@ -32,5 +34,14 @@ public class AbsentServiceImpl implements AbsentService {
                 break;
         }
         return list;
+    }
+
+    @Override
+    public void save(Absent absent) {
+        try {
+            this.absentMapper.save(absent);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
