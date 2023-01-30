@@ -4,8 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.zzzzzz.dto.AccountDto;
+import org.zzzzzz.entity.DormitoryAdmin;
 import org.zzzzzz.entity.SystemAdmin;
 import org.zzzzzz.form.AccountForm;
+import org.zzzzzz.mapper.DormitoryAdminMapper;
+import org.zzzzzz.mapper.DormitoryMapper;
 import org.zzzzzz.mapper.SystemAdminMapper;
 import org.zzzzzz.service.AccountService;
 
@@ -14,6 +17,9 @@ public class AccountServiceImpl implements AccountService {
 
     @Autowired
     private SystemAdminMapper systemAdminMapper;
+
+    @Autowired
+    private DormitoryAdminMapper dormitoryAdminMapper;
 
     @Override
     public AccountDto login(AccountForm accountForm) {
@@ -33,7 +39,17 @@ public class AccountServiceImpl implements AccountService {
                 }
                 break;
             case "dormitoryAdmin" :
-
+                DormitoryAdmin dormitoryAdmin = this.dormitoryAdminMapper.findByUserName(accountForm.getUsername());
+                if(dormitoryAdmin == null) {
+                    dto.setCode(-1);
+                } else {
+                    if(!dormitoryAdmin.getPassword().equals(accountForm.getPassword())) {
+                        dto.setCode(-2);
+                    } else {
+                        dto.setCode(0);
+                        dto.setAdmin(dormitoryAdmin);
+                    }
+                }
                 break;
         }
         return dto;

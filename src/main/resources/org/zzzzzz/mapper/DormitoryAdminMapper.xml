@@ -31,4 +31,8 @@
     <select id="searchByTelephone" resultType="DormitoryAdmin">
         select * from dormitory_admin where telephone like concat('%', #{telephone}, '%')
     </select>
+
+    <select id="findByUserName" resultType="org.zzzzzz.entity.DormitoryAdmin">
+        select * from dormitory_admin where username = #{username}
+    </select>
 </mapper>
