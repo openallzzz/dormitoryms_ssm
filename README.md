@@ -3,7 +3,7 @@
 > 可供大作业、课程设计、毕业选题、技术学习等进行参考
 
 ## 技术栈
-`Spring + SpringMVC + MyBatis + Servlet + ajax(异步提交级联查询) + jsp + JavaScript + BootStrap`
+`Spring + SpringMVC + MyBatis + Servlet + ajax(异步提交、级联查询) + jsp + JavaScript + BootStrap`
 
 ## 开发涉及到的版本信息（供参考）
 `Java: 1.8`、`MySQL: 8.0.26`、`Maven: 3.6.1`、`Tomcat: 9.0.24`、`IDEA: 2022.1.1`
